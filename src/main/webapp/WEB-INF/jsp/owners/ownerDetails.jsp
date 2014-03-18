@@ -14,23 +14,23 @@
 <div class="container">
     <jsp:include page="../fragments/bodyHeader.jsp"/>
 
-    <h2>Informações dos Proprietários</h2>
+    <h2><fmt:message key="InfoProprietario"/></h2>
 
     <table class="table table-striped" style="width:600px;">
         <tr>
-            <th>Nome</th>
+            <th><fmt:message key="nome"/></th>
             <td><b><c:out value="${owner.firstName} ${owner.lastName}"/></b></td>
         </tr>
         <tr>
-            <th>Endereço</th>
+            <th><fmt:message key="endereco"/></th>
             <td><c:out value="${owner.address}"/></td>
         </tr>
         <tr>
-            <th>Cidade</th>
+            <th><fmt:message key="cidade"/></th>
             <td><c:out value="${owner.city}"/></td>
         </tr>
         <tr>
-            <th>Telefone</th>
+            <th><fmt:message key="telefone"/></th>
             <td><c:out value="${owner.telephone}"/></td>
         </tr>
          <tr>
@@ -43,22 +43,22 @@
             	<spring:url value="{ownerId}/pets/new.html" var="addUrl">
                     <spring:param name="ownerId" value="${owner.id}"/>
                 </spring:url>
-                <a href="${fn:escapeXml(addUrl)}"  class="btn btn-success">Adicionar novo animal de estimação</a></td>
+                <a href="${fn:escapeXml(addUrl)}"  class="btn btn-success"><fmt:message key="addPet"/></a></td>
         </tr>
     </table>
 
-    <h2>Animais de estimação e Proprietários</h2>
+    <h2><fmt:message key="petProprietario"/></h2>
 
     <c:forEach var="pet" items="${owner.pets}">
         <table class="table" style="width:600px;">
             <tr>
                 <td valign="top" style="width: 120px;">
                     <dl class="dl-horizontal">
-                        <dt>Nome</dt>
+                        <dt><fmt:message key="nome"/></dt>
                         <dd><c:out value="${pet.name}"/></dd>
-                        <dt>Aniversário</dt>
+                        <dt><fmt:message key="aniversario"/></dt>
                         <dd><joda:format value="${pet.birthDate}" pattern="yyyy-MM-dd"/></dd>
-                        <dt>Tipo</dt>
+                        <dt><fmt:message key="tipo"/></dt>
                         <dd><c:out value="${pet.type.name}"/></dd>
                     </dl>
                 </td>
@@ -66,8 +66,8 @@
                     <table class="table-condensed">
                         <thead>
                         <tr>
-                            <th>Data de Visita</th>
-                            <th>Descrição</th>
+                            <th><fmt:message key="dataVisita"/></th>
+                            <th><fmt:message key="descricao"/></th>
                         </tr>
                         </thead>
                         <c:forEach var="visit" items="${pet.visits}">
@@ -82,14 +82,14 @@
 			                        <spring:param name="ownerId" value="${owner.id}"/>
 			                        <spring:param name="petId" value="${pet.id}"/>
 			                    </spring:url>
-			                    <a href="${fn:escapeXml(petUrl)}">Editar Animal de estimação</a>
+			                    <a href="${fn:escapeXml(petUrl)}"><fmt:message key="editPet"/></a>
 			                </td>
                             <td>
 			                    <spring:url value="/owners/{ownerId}/pets/{petId}/visits/new" var="visitUrl">
 			                        <spring:param name="ownerId" value="${owner.id}"/>
 			                        <spring:param name="petId" value="${pet.id}"/>
 			                    </spring:url>
-			                    <a href="${fn:escapeXml(visitUrl)}">Adicionar Visitante</a>
+			                    <a href="${fn:escapeXml(visitUrl)}"><fmt:message key="addVisitante"/></a>
                             </td>
                        	</tr>
                     </table>

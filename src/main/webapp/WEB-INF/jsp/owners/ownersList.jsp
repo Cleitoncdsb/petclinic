@@ -13,7 +13,7 @@
 <body>
 <div class="container">
     <jsp:include page="../fragments/bodyHeader.jsp"/>
-    <h2>Proprietários</h2>
+    <h2><fmt:message key="proprietarios"/></h2>
     
     <datatables:table id="owners" data="${selections}" cdn="true" row="owner" theme="bootstrap2" 
                       cssClass="table table-striped" paginate="false" info="false" export="pdf">

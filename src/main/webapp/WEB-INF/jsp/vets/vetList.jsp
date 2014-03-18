@@ -7,7 +7,6 @@
 
 <html lang="en">
 
-
 <jsp:include page="../fragments/headTag.jsp"/>
 
 <body>
