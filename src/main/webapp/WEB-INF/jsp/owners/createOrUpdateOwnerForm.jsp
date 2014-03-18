@@ -21,22 +21,22 @@
     </c:choose>
 
     <h2>
-        <c:if test="${owner['new']}">New </c:if> Owner
+        <c:if test="${owner['new']}">Novo Proprietário</c:if> 
     </h2>
     <form:form modelAttribute="owner" method="${method}" class="form-horizontal" id="add-owner-form">
-        <petclinic:inputField label="First Name" name="firstName"/>
-        <petclinic:inputField label="Last Name" name="lastName"/>
-        <petclinic:inputField label="Address" name="address"/>
-        <petclinic:inputField label="City" name="city"/>
-        <petclinic:inputField label="Telephone" name="telephone"/>
+        <petclinic:inputField label="Primeirot Nome" name="firstName"/>
+        <petclinic:inputField label="Ultimo Nome" name="lastName"/>
+        <petclinic:inputField label="Adereço" name="address"/>
+        <petclinic:inputField label="Cidade" name="city"/>
+        <petclinic:inputField label="Telefone" name="telephone"/>
 
         <div class="form-actions">
             <c:choose>
                 <c:when test="${owner['new']}">
-                    <button type="submit">Add Owner</button>
+                    <button type="submit">Adicionar Proprietário</button>
                 </c:when>
                 <c:otherwise>
-                    <button type="submit">Update Owner</button>
+                    <button type="submit">Atualizar Proprietário</button>
                 </c:otherwise>
             </c:choose>
         </div>

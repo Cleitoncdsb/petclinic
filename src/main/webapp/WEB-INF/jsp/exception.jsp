@@ -12,9 +12,9 @@
     <spring:url value="/resources/images/pets.png" var="petsImage"/>
     <img src="${petsImage}"/>
 
-    <h2>Something happened...</h2>
-
-    <p>${exception.message}</p>
+    <h2>Alguma coisa aconteceu...</h2>
+	<p>Desencadear uma RuntimeException para ver como ele é tratado</p>
+    <!-- <p>${exception.message}</p> -->
 
     <!-- Exception: ${exception.message}.
 		  	<c:forEach items="${exception.stackTrace}" var="stackTrace"> 
